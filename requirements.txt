@@ -1,0 +1,18 @@
+# Core runtime
+aiohttp>=3.9.0
+requests>=2.31.0
+
+# Google Chat / Google APIs
+google-auth>=2.28.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.120.0
+
+# WebRTC signalling (server-side helpers)
+aiortc>=1.9.0
+
+# gRPC for Starlink dish API
+grpcio>=1.62.0
+grpcio-tools>=1.62.0
+
+# Security / cryptography
+cryptography>=42.0.0
