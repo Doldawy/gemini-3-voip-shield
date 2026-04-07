@@ -1,0 +1,14 @@
+name: Cloudflare Radar Auto-Check
+on:
+  schedule:
+    - cron: '0 * * * *' # يشتغل تلقائياً كل ساعة
+  workflow_dispatch:      # يخليك تشغله يدوياً متى ما بغيت
+
+jobs:
+  check-network:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Radar Data
+        run: |
+          curl -X GET "https://api.cloudflare.com/client/v4/radar/annotations/outages" \
+               -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}"
